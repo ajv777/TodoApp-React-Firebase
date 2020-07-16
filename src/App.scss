@@ -1,0 +1,33 @@
+.app {
+  padding: 0 !important;
+
+  .title {
+    height: 100px;
+    background-color: #0072bb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+      color: #fff;
+    }
+  }
+
+  .todo {
+    margin: 40px 0 0 0;
+    &__title {
+      background-color: #fff;
+      height: 80px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #dadada;
+
+      h2 {
+        color: #0072bb;
+      }
+    }
+  }
+}

@@ -11,7 +11,8 @@ import "./AddTaks.scss";
 // Save task in database
 const dbTodo = firebase.firestore(firebase);
 
-export default function AddTaks() {
+export default function AddTask(props) {
+  const { setReloadTasks } = props;
   const [task, setTask] = useState("");
 
   const onSubmit = (event) => {
@@ -25,24 +26,27 @@ export default function AddTaks() {
         })
         .then(() => {
           setTask("");
-          console.log("the task has saved in database");
+          //console.log("the task has saved in database");
+          setReloadTasks(true);
         });
     }
+    // console.log("Form has send");
+    // console.log("Task has send", task);
+    // console.log("task is empty?", isEmpty(task));
   };
-  // console.log("Form has send");
-  // console.log("Task has send", task);
-  // console.log("task is empty?", isEmpty(task));
 
   return (
     <Form onSubmit={onSubmit} className="add-task">
       <input
         type="text"
-        placeholder="new task..."
+        placeholder="Add a new task..."
         onChange={(event) => setTask(event.target.value)}
       />
-      <Button type="submit">
-        <Send></Send>
-      </Button>
+      <div className="send-task">
+        <Button type="submit" className="btn btn-primary">
+          Save task
+        </Button>
+      </div>
     </Form>
   );
 }

@@ -1,0 +1,55 @@
+.task {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #0072bb;
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  div {
+    &:nth-child(1) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #0072bb;
+      height: 70px;
+      width: 70px;
+
+      svg {
+        &:hover {
+          cursor: pointer;
+          fill: #479921cb;
+        }
+        &.completed {
+          fill: #479921cb;
+        }
+      }
+    }
+    &:nth-child(2) {
+      padding-left: 20px;
+    }
+    &:nth-child(3) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 20px;
+
+      svg {
+        &:hover {
+          cursor: pointer;
+          fill: #e20000ce;
+        }
+      }
+    }
+    svg {
+      width: 22px;
+      fill: #bdbdbd;
+
+      &.completed {
+        fill: #45da00;
+      }
+    }
+  }
+}
